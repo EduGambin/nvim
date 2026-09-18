@@ -7,7 +7,7 @@ vim.pack.add({
 	"https://github.com/lukas-reineke/indent-blankline.nvim",
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/j-hui/fidget.nvim",
-	"https://github.com/rachartier/tiny-cdmline.nvim",
+	"https://github.com/rachartier/tiny-cmdline.nvim",
 
 	-- Treesitter
 	"https://github.com/nvim-treesitter/nvim-treesitter",
