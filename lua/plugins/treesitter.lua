@@ -9,6 +9,7 @@ require("nvim-treesitter").install({
 	"query",
 	"vim",
 	"vimdoc",
+	"typst",
 })
 
 -- Automatically tries to enable treesitter for any file.
