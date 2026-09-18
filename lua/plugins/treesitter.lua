@@ -1,4 +1,4 @@
-local languages = {
+require("nvim-treesitter").install({
 	"bash",
 	"diff",
 	"lua",
@@ -9,14 +9,14 @@ local languages = {
 	"query",
 	"vim",
 	"vimdoc",
-}
+})
 
-require("nvim-treesitter").install(languages)
-
+-- Automatically tries to enable treesitter for any file.
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = languages,
+	group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true }),
 	callback = function(args)
-		pcall(vim.treesitter.start, args.buf)
-		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		if pcall(vim.treesitter.start, args.buf) then
+			vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		end
 	end,
 })
