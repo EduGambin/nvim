@@ -2,7 +2,7 @@
 vim.loader.enable()
 
 vim.g.mapleader = " " -- space leader key
-vim.g.maplocalleader = " " -- space leader key
+vim.g.maplocalleader = "\\" -- space leader key
 
 vim.o.termguicolors = true -- enable 24-bit colors
 vim.o.updatetime = 200 -- save swap file with 200ms debouncing
@@ -39,7 +39,21 @@ vim.o.breakindent = true -- prevent line wrapping
 vim.opt.fillchars = { eob = " " }
 vim.o.laststatus = 3 -- global statuslined the github domain
 
-vim.o.list = true -- display certain whitespace characters in the editor.
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
 vim.o.confirm = true -- ask for confirmation if exiting without saving
+
+-- diagonstic configuration
+vim.o.cmdheight = 0
+vim.diagnostic.config({
+	underline = true,
+	virtual_text = true,
+	update_in_insert = false,
+	severity_sort = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+		},
+	},
+})
