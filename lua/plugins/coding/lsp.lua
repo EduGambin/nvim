@@ -1,9 +1,12 @@
 require("mason").setup() -- required by mason-lspconfig
-require("mason-lspconfig").setup({ -- automatic setup of LSP servers
+require("mason-lspconfig").setup() -- required by mason-lspconfig
+require("mason-tool-installer").setup({ -- automatic setup of LSP servers
 	ensure_installed = {
 		"stylua",
 		"lua_ls",
 		"tinymist",
+		"clangd",
+		"clang-format",
 	},
 })
 
@@ -51,3 +54,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		set_keymaps(ev.buf)
 	end,
 })
+
+-- I have not figured out how to do this in the specific Typst file
+vim.api.nvim_create_user_command("OpenPdf", function()
+	local filepath = vim.api.nvim_buf_get_name(0)
+	if filepath:match("%.typ$") then
+		local pdf_path = filepath:gsub("%.typ$", ".pdf")
+		vim.system({ "zathura", "-fork", pdf_path })
+	end
+end, {})

@@ -34,6 +34,8 @@ vim.o.splitbelow = true -- better splitting
 vim.o.splitright = true -- better splitting
 
 vim.o.wrap = false -- disable wrapping
+vim.o.linebreak = true -- but if necessary, make it look pretty
+vim.cmd([[set showbreak=↪\ ]]) -- very pretty
 vim.o.breakindent = true -- prevent line wrapping
 vim.opt.fillchars = { eob = " " }
 vim.o.laststatus = 3 -- global statuslined the github domain

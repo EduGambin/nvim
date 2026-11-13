@@ -7,7 +7,6 @@ vim.pack.add({
 	"https://github.com/lukas-reineke/indent-blankline.nvim",
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/j-hui/fidget.nvim",
-	"https://github.com/rachartier/tiny-cmdline.nvim",
 
 	-- Treesitter
 	"https://github.com/nvim-treesitter/nvim-treesitter",
@@ -17,11 +16,12 @@ vim.pack.add({
 	"https://github.com/nvim-mini/mini.ai",
 	"https://github.com/kylechui/nvim-surround",
 	"https://github.com/windwp/nvim-autopairs",
+	"https://github.com/CoreyKaylor/diffbandit.nvim",
 
 	-- Coding
-	"https://github.com/mason-org/mason-lspconfig.nvim",
-	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/L3MON4D3/LuaSnip",
@@ -31,6 +31,9 @@ vim.pack.add({
 	"https://github.com/rachartier/tiny-code-action.nvim",
 	"https://github.com/artemave/workspace-diagnostics.nvim",
 	"https://github.com/rachartier/tiny-inline-diagnostic.nvim",
+
+	-- Languages
+	"https://github.com/dchinmay2/clangd_extensions.nvim",
 })
 
 require("plugins.ui")

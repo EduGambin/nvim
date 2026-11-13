@@ -1,6 +1,11 @@
 return {
 	settings = {
+		formatterMode = "typstyle",
+		formatterProseWrap = "sentence",
 		exportPdf = "onSave",
-		lint = { enabled = true },
+		semanticTokens = "disable",
 	},
+	on_attach = function(bufnr)
+		print("El pito ta reweno")
+	end,
 }

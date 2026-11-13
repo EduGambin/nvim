@@ -3,6 +3,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		typst = { "typstyle" },
+		cpp = { "clang-format" },
 	},
 	formatters = {
 		typstyle = { args = { "--wrap-text=sentence" } },
